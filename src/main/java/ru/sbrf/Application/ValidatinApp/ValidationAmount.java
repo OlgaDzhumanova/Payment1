@@ -6,9 +6,7 @@ public class ValidationAmount {
     private float amount;
 
     public float ValidationAmount(float amount) {
-        if (amount <= 0) {
-            throw new ExceptionApp("invalid amount" + amount);
-        } else { }
+        new Amount().accept(amount);
         return amount;
     }
 }
