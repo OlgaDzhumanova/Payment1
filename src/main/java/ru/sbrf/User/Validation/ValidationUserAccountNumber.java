@@ -4,12 +4,12 @@ import ru.sbrf.User.ExceptionUser;
 
 public class ValidationUserAccountNumber <T> {
     private String accountNumber;
-    public String ValidationAccountNumber(T a){
+    public boolean ValidationAccountNumber(T a){
         a = (T) accountNumber;
         if(accountNumber.length()!= 20){
             throw new ExceptionUser("invalid accountNumber" + accountNumber);
         }else {
-            return (String) a;
+            return true;
         }
 
     }
