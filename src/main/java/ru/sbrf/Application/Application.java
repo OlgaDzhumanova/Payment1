@@ -1,18 +1,20 @@
 package ru.sbrf.Application;
-
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import ru.sbrf.Server.AppList;
 
 import java.util.Scanner;
+@Configuration
 
 public class Application {
 
     Scanner scanner = new Scanner(System.in);
     AppList appList = new AppList();
-
-    public void EnterAmount() {
+@Bean
+    public void enterAmount() {
         System.out.println("Введите сумму");
         float a = scanner.nextFloat();
-        if (new ValidationApp().ValidationAmount(a) != true) {
+        if (new ValidationApp().validationAmount(a) != true) {
             System.out.println("Введена некорректная сумма");
         } else if (appList.inListAmount(a).equals(a)) {
             System.out.println("Ошибка: reentering Amount");
@@ -20,11 +22,11 @@ public class Application {
             System.out.println("Сумма перевода:" + a);
         }
     }
-
-    public void EnterPhoneNumber(){
+@Bean
+    public void enterPhoneNumber(){
         System.out.println("Введите номер телефона");
         String p = scanner.nextLine();
-        if (new ValidationApp().ValidationPhoneNumber(p) != true){
+        if (new ValidationApp().validationPhoneNumber(p) != true){
             System.out.println("Введен некорректный номер телефона");
         }else if (appList.inListPhoneNumber(p).equals(p)) {
             System.out.println("Ошибка: reentering PhoneNumber");
@@ -34,11 +36,11 @@ public class Application {
 
 
     }
-
-    public void EnterCurrency(){
+@Bean
+    public void enterCurrency(){
         System.out.println("Введите валюту платежа");
         String c = scanner.nextLine();
-        if (new ValidationApp().ValidationCurrency(c) != true){
+        if (new ValidationApp().validationCurrency(c) != true){
             System.out.println("Введена некорректная валюта");
         }else if (appList.inListCurrency(c).equals(c)){
             System.out.println("Ошибка: reentering Currency");

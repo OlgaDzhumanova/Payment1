@@ -1,5 +1,6 @@
 package ru.sbrf.Application;
 
+
 public class ExceptionApp  extends RuntimeException{
     public ExceptionApp() {
     }

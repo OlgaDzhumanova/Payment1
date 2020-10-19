@@ -3,7 +3,7 @@ package ru.sbrf.Application;
 
 public class ValidationApp extends ExceptionApp {
 
-    public boolean ValidationPhoneNumber(String phoneNumber) {
+    public boolean validationPhoneNumber(String phoneNumber) {
         if ((phoneNumber.length() != 12) && (!phoneNumber.startsWith("+7"))) {
             throw new ExceptionApp("invalid PhoneNumber" + phoneNumber);
         } else {
@@ -11,7 +11,7 @@ public class ValidationApp extends ExceptionApp {
         }
     }
 
-    public boolean ValidationCurrency(String currency) {
+    public boolean validationCurrency(String currency) {
         if (!(currency.equals(UserApp.Curr.values()))){
             throw new ExceptionApp("Invalid currency");
         }else {
@@ -20,7 +20,7 @@ public class ValidationApp extends ExceptionApp {
 
         }
 
-    public boolean ValidationAmount(float amount) {
+    public boolean validationAmount(float amount) {
         if (amount <= 0) {
             throw new ExceptionApp("invalid amount");
         } else {

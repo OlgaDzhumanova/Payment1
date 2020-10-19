@@ -1,5 +1,6 @@
 package ru.sbrf.User;
 
+
 public class ExceptionUser extends RuntimeException{
     private boolean accountNumber;
     private boolean userNumber;
